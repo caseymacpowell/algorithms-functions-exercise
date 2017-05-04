@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 6: </title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		//Sort Function
+		var arrSort = function(arr){
+			var sortedArr;
+			if(typeof arr === "number"){ // if statement accounts for non number arrays
+			sortedArr = arr.sort(function(a, b){
+				return a - b;
+			});
+		} else {
+			sortedArr = arr.sort();
+
+		}
+		return sortedArr;
+		};
+
+		//Compare Function
+		var compareArr = function(arr1, arr2){
+			var arr1Sort = arrSort(arr1); //sort both arrays
+			var arr2Sort = arrSort(arr2);
+			if(arr1Sort.length !== arr2Sort.length){ //compare array lengths. If different, we know arrays do not have the same number of the same values
+				return false;
+			}
+			for(var i = 0; i < arr1Sort.length; i++){
+				if(arr1Sort[i] !== arr2Sort[i]){ //compare array at each index
+					return false;
+				}
+			}
+			return true;
+		};
+
+		// Tests
+		console.log(compareArr([], []));
+		console.log(compareArr([2, 3, 4], [1, 2, 3]));
+		console.log(compareArr(["a", "c", "b"], ["a", "b", "c"]));
+		console.log(compareArr([1, 1, 1], [1, 1, 1, 1]));
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

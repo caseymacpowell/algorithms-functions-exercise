@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 4: </title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+			var noDuplicates = function(arr){
+				var newArr = [];
+				newArr.push(arr[0]); //push the first number as we know its not a duplicate.
+				for(var i = 1; i < arr.length; i++){
+					if(newArr.indexOf(arr[i]) === -1){ //indexOf returns the position of a value if it exists in the array. It returns -1 if it does not exist.
+						newArr.push(arr[i]); //therefore, push any value if the indexOf returns -1.
+					}
+				}
+				return newArr;
+			};
+
+
+
+		//Tests
+		console.log(noDuplicates([1,1,2,3,1,2,3]));
+		console.log(noDuplicates([1,4,4,4,2,2,4,4,4]));
+		console.log(noDuplicates([0,5,3,3,4,5,7]));
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

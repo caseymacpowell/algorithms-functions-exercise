@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 10: Max SubArray</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	// Function to return max sum subarray
+	var subArr = function(arr){
+		var sum = 0; //to track our max sum
+		var startIndex; //to track our starting index
+		var endIndex; //to track our ending index
+		var subArr = [];
+		for(var i = 0; i <= arr.length; i++){ //this double for loop checks the sum of each possible subarray
+			for(var j = 0; j <= arr.length; j++){
+				if(sum < sumArr(arr.slice(i, j))){ //we evaluate each subarray to see if it's sum is higher than any previous sum
+					sum = sumArr(arr.slice(i, j)); //if so, we store the new sum and indexes that created the highest sum
+					startIndex = i;
+					endIndex = j;
+				}
+			}
+			subArr = arr.slice(startIndex, endIndex);
+		}
+		return subArr;
+	};
+
+	// Function to sum subarrays
+	var sumArr = function(arr){
+		var sum = 0;
+		for(var i = 0; i < arr.length; i++){
+			sum += arr[i];
+		}
+		return sum;
+	};
+
+		// Tests
+		console.log(subArr([1, 1, 1, -1]));
+		console.log(subArr([1, 5, -4, 3, 2, -3]));
+		console.log(subArr([2, 2, -10, 5, -10, 2, 2]));
+		console.log(subArr([1, 3, -4, 5, 7, 9]));
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

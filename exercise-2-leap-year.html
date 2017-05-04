@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 2: Leap Year </title>
+</head>
+<body>
+	<script type="text/javascript">
+		// Most years that can be divided evenly by 4 are leap years.
+		// Exception: Century years are NOT leap years UNLESS they can be evenly divided by 400.
+
+		var leapYear = function(yr){
+			if(yr % 100 === 0){ //because centuries are an exception to the basic leap year rule,
+				if(yr % 400 === 0){ //we need to check divisibility by 100 first. If this is true,
+					return true;    //we also need to check the yrs divisibility by 400 as well.
+				} else{
+					return false;
+				}
+			} else if(yr % 4 === 0){	//Lastly, if not a century, we can follow the basic
+				return true;			//rule of leap years being divisible by 4
+			} else{
+				return false;
+			}
+	};
+
+
+
+
+
+	//Tests
+	console.log(leapYear(2000));
+	console.log(leapYear(1900));
+	console.log(leapYear(2016));
+	console.log(leapYear(2024));
+	</script>
+</body>
+</html>

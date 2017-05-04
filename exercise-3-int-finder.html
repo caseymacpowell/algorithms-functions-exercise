@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 3: Integer Finder</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var int = function(arr){
+			var intCounter = 1; //Create a counter that starts at 1
+			for(var i = 0; i < (arr.length + 1); i++){
+				if(arr[i] === intCounter){ //compare the array to the integer counter to see 
+					intCounter++;			//if any numbers are skipped
+				} else if(arr[i] === undefined){ //else if statement accounts for an array that has 
+					return intCounter; //ended and the next integer would be undefined.
+				} else {
+					return intCounter;
+				}
+			}
+		};
+
+		//Tests
+		console.log(int([1,2,5]));
+		console.log(int([1,2,3,4,5]));
+		console.log(int([3,4,5]));
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

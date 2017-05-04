@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 11: </title>
+</head>
+<body>
+	<script type="text/javascript">
+		//remove spaces from string. take square root and round up. That's the number to make your square.
+
+		var encodeSquare = function(str){
+			var newStr = str.split(" ").join(""); // split string into an array then join into a string with no spaces
+			var square = Math.ceil(Math.sqrt(newStr.length)); // find a square that fits character amt
+			var newArr = []; // ["have", "anic", "eday", "!"]
+			var encodeMsg = " ";
+			for( var s = 0; s <= newStr.length; s += square){ //create an array with substrings equal to the square value
+				newArr.push(newStr.substring(s, s + square));
+			}
+			for(var i = 0; i < newArr.length; i++){ //take the first letter at each index of array and add to a new string. repeat at each index for each letter position
+				for( var j = 0; j < square; j++){
+					if(newArr[j][i] !== undefined){ //this line accounts for strings that are shorter than others within the array
+						encodeMsg += newArr[j][i];
+					}
+				}
+				encodeMsg += " ";
+			}
+			return encodeMsg;
+		};
+		console.log(encodeSquare("have a nice day!"));
+		console.log(encodeSquare("you are amazing! keep it up"));
+
+		var decodeSquare = function(str){
+			var newArr = str.split(" "); // put string into an array
+			var newStr = "";
+			for(var i = 0; i < newArr.length; i++){ //repeat a similar process to the double for loop above
+				for(var j = 0; j < newArr.length; j++){
+					if(newArr[j][i] !== undefined){
+						newStr += newArr[j][i];
+					}
+				}
+			}
+			return newStr;
+		};
+		console.log(decodeSquare("hae! and via ecy"));
+		console.log(decodeSquare("yeieu oanep umgp aa!i rzkt"));
+
+
+
+	</script>
+</body>
+</html>

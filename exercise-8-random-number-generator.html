@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 8: </title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var randomNum = function(){
+			var arr = [];
+			while(arr.length < 10){ //use a while statement in case random number generator generates the same number more than once
+				var newNum = Math.floor(Math.random() * 100); //generate a random number
+				if(arr.indexOf(newNum) === -1 && newNum !== 0){ //check to see if random number is already in array and not equal to zero
+					arr.push(newNum); //if number is not in array or 0, push to array
+				}
+			}
+			return arr;
+		};
+
+
+		// Tests
+		console.log(randomNum());
+
+
+
+
+
+	</script>
+</body>
+</html>

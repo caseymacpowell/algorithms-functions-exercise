@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 5: </title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		// Text to Pig Latin
+		var pigLatin = function(str){
+			var arr = str.split(" "); //turn string into an array on spaces
+			var newArr = [];
+			for(var i = 0; i < arr.length; i++){
+				var ayVar = arr[i][0] + "ay"; //create an "ay" variable by concatenating the first letter of each word and "ay"
+				var newWord = arr[i].substr(1) + ayVar; //grab a substring of each word from the second letter to the end and add the "ay" variable on the end
+				newArr.push(newWord); //push new words into an array
+			}
+			return newArr.join(" "); //turn array into a new string
+		};
+
+		//Test
+		console.log(pigLatin("the quick brown fox"));
+
+		// Pig Latin to Text
+		var rvsPigLatin = function(str){
+			var arr = str.split(" "); //turn string into array
+			var newArr = [];
+			for(var i = 0; i < arr.length; i++){
+				var origWord = arr[i][arr[i].length - 3] + arr[i].substr(0, arr[i].length - 3); //find the original first letter of each word (3rd from the end) and add it to a substring of the word that removes the last 3 letters
+				newArr.push(origWord); //push originals words into an array
+			}
+			return newArr.join(" "); //turn array back into a string
+		};
+		
+		//Test
+		console.log(rvsPigLatin("hetay uickqay rownbay oxfay"));
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
